@@ -1,0 +1,21 @@
+
+<h1><%= @restaurant.name %></h1>
+
+
+  <div>
+    <ul><li>Address: <%=@restaurant.address %></li>
+    <li>City: <%=@restaurant.city %></li>
+    <li>State: <%=@restaurant.state %></li>
+    <li>Zip Code:<%=@restaurant.zipcode %></li>
+    <li>Description: <%=@restaurant.description %></li>
+    <li>Category: <%=@restaurant.category %></li>
+
+
+    </ul>
+    <%= link_to "Submit A Review of this Restaurant", new_restaurant_review_path(params[:id]) %>
+
+
+    <% @reviews.each do |review| %>
+    <li>Rating (out of 5): <%= review.rating %></li>
+    <li>Additional Comments: <%= review.body %></li><br>
+    <% end %>
